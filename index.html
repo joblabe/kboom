@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador de Diamantes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="modal-overlay" id="modalInstrucciones">
+    <div class="modal-content">
+      <h2>¡BIENVENIDO!</h2>
+      <p>El tablero contiene <strong>20 Diamantes</strong> y <strong>5 Minas</strong> ocultas aleatoriamente.</p>
+      <ul>
+        <li>Encuentra 5 diamantes seguidos sin tocar ninguna mina para ganar <strong>+5 puntos</strong>.</li>
+        <li>Si tocas una mina, pierdes automáticamente <strong>-5 puntos</strong> y termina la ronda.</li>
+        <li>Si tu saldo llega a 0, se restaurará automáticamente para que sigas jugando.</li>
+      </ul>
+      <button class="btn-modal" id="btnInstrucciones">EMPEZAR A JUGAR</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modalReincioContador">
+    <div class="modal-content alerta">
+      <h2>¡SIN SALDO!</h2>
+      <p>Te has quedado sin puntos. El sistema ha restaurado tu saldo inicial para que puedas continuar jugando.</p>
+      <button class="btn-modal" id="btnReinicioContador">CONTINUAR</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modalGanaPuntos">
+    <div class="modal-content exito">
+      <h2>¡VICTORIA!</h2>
+      <p>¡Increíble! Lograste encontrar 5 diamantes sin activar ninguna mina.</p>
+      <div class="premio">+5 PUNTOS</div>
+      <button class="btn-modal" id="btnGanaPuntos">NUEVA RONDA</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modalPierdePuntos">
+    <div class="modal-content derrota">
+      <h2>¡BOOM!</h2>
+      <p>Has pisado una mina explosiva.</p>
+      <div class="penalizacion">-5 PUNTOS</div>
+      <button class="btn-modal" id="btnPierdePuntos">INTENTAR DE NUEVO</button>
+    </div>
+  </div>
+
+  <img src="img/logo.png" alt="Logo" class="logo">
+
+  <div class="marcador-container">
+    <div class="marcador-item">
+      <span>SALDO</span>
+      <span id="txtSaldo" class="digital-text">50</span>
+    </div>
+    <div class="marcador-item">
+      <span>DIAMANTES</span>
+      <span id="txtDiamantes" class="digital-text">0 / 5</span>
+    </div>
+  </div>
+
+  <div class="tablero" id="tablero"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
